@@ -19,7 +19,7 @@ public class UserClientTest {
     public void setUp() {
 		this.contem = false;
 		params.setUc(new UserClient());
-		params.setOperador(1);
+		params.setOperador(1); //0 - DESC / 1 - ASC / Mas se colocar outro valor...
 		params.getUc().metodologia(params);
     }
 	
