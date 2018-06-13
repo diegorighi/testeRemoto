@@ -1,14 +1,15 @@
-package br.com.vilt.test.modelo;
+package br.com.vilt.test.impl;
 
 import java.util.Collections;
 import java.util.List;
 
 import br.com.vilt.test.api.SentidoDaLista;
+import br.com.vilt.test.dto.ParametrosDTO;
 
 public class ListaReversa implements SentidoDaLista {
 
 	@Override
-	public void isReverse(Parametros params) {
+	public void isReverse(ParametrosDTO params) {
 
 		if (params.getOperador() == 1) {
 			// ASC

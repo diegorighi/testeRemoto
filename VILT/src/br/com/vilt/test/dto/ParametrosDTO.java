@@ -1,8 +1,9 @@
-package br.com.vilt.test.modelo;
+package br.com.vilt.test.dto;
 
 import br.com.vilt.test.client.UserClient;
+import br.com.vilt.test.impl.ListaReversa;
 
-public class Parametros{
+public class ParametrosDTO{
 	
 	private UserClient uc = new UserClient();
 	private int operador = -1;
