@@ -51,6 +51,7 @@ public class UserClientTest {
 				this.contem  = true;
 		});
 		
+		assertThat(params.getUc().getListaFatorada().size(), equalTo(200));
 		assertThat(true, equalTo(this.contem));
 		
 	}
