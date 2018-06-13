@@ -2,13 +2,13 @@ package br.com.vilt.test.modelo;
 
 import br.com.vilt.test.client.UserClient;
 
-public class Parametros {
+public class Parametros{
+	
 	private UserClient uc = new UserClient();
 	private int operador = -1;
 	ListaReversa sentidoDaLista = new ListaReversa();
 	private short numero = 0;
-	
-	
+	private String numeroFatorado = null;
 	
 	/**
 	 * @return the uc
@@ -52,6 +52,32 @@ public class Parametros {
 	public ListaReversa getSentidoDaLista() {
 		return sentidoDaLista;
 	}
+	/**
+	 * @return the numeroFatorado
+	 */
+	public String getNumeroFatorado() {
+		return numeroFatorado;
+	}
+	/**
+	 * @param numeroFatorado the numeroFatorado to set
+	 */
+	public void setNumeroFatorado(String numeroFatorado) {
+		this.numeroFatorado = numeroFatorado;
+	}
+	
+	
+	
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Parametros [uc=" + uc + ", operador=" + operador + ", sentidoDaLista=" + sentidoDaLista + ", numero="
+				+ numero + ", numeroFatorado=" + numeroFatorado + "]";
+	}
+	
+	
 	
 	
 	

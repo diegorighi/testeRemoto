@@ -26,9 +26,8 @@ public class UserClient {
 
 	private static int dialogoUI() {
 		Object[] options = { "Exibir Lista Reversa", "Exibir Lista Normal" };
-		int op = JOptionPane.showOptionDialog(null, "Qual lista deseja exibir?", "ATENÇÃO",
+		return JOptionPane.showOptionDialog(null, "Qual lista deseja exibir?", "ATENÇÃO",
 				JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
-		return op;
 	}
 
 	private void metodologia(Parametros params) {
@@ -46,8 +45,8 @@ public class UserClient {
 		new NonMultipl().isMultiplo(params);
 	}
 
-	public void addList(String n) {
-		this.listaFatorada.add(n);
+	public void addList(Parametros params) {
+		this.listaFatorada.add(params.getNumeroFatorado());
 	}
 
 	public Collection<String> getListaFatorada() {

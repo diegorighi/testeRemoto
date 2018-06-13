@@ -25,5 +25,7 @@ public class ListaReversa implements SentidoDaLista {
 			throw new IllegalArgumentException("Andou fuçando o código, né? :)");
 
 	}
+	
+	
 
 }

@@ -7,7 +7,8 @@ public class NonMultipl implements Multiplo{
 	@Override
 	public void isMultiplo(Parametros params) {
 		if(params.getNumero() % 5 != 0 && params.getNumero() % 3 != 0) {
-			params.getUc().addList(+params.getNumero()+"");
+			params.setNumeroFatorado(String.format("%s", params.getNumero()));
+			params.getUc().addList(params);
 		}
 		
 	}
