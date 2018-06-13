@@ -10,18 +10,21 @@ public class ListaReversa implements SentidoDaLista {
 
 	@Override
 	public void isReverse(int sentido, UserClient uc) {
+
 		if (sentido == 1) {
 			// ASC
 			uc.getListaFatorada().stream().forEach(l -> {
 				System.out.println(l);
 			});
-		} else {
+		} else if (sentido == 0) {
 			// DESC
 			Collections.reverse((List<String>) uc.getListaFatorada());
 			uc.getListaFatorada().stream().forEach(l -> {
 				System.out.println(l);
 			});
-		}
+		} else
+			throw new IllegalArgumentException("Andou fuçando no código, né? :)");
+
 	}
 
 }
