@@ -22,6 +22,7 @@ public class UserClient {
 		ParametrosDTO params = new ParametrosDTO();
 		params.setUc(new UserClient());
 		params.setOperador(dialogoUI());
+		
 		params.getUc().metodologia(params);
 	}
 
@@ -31,7 +32,7 @@ public class UserClient {
 				JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
 	}
 
-	private void metodologia(ParametrosDTO params) {
+	public void metodologia(ParametrosDTO params) {
 		for (short i = _INICIO; i <= _FIM; i++) {
 			params.setNumero(i);
 			params.getUc().getMultiplo(params);
