@@ -1,14 +1,13 @@
 package br.com.vilt.test.modelo;
 
 import br.com.vilt.test.api.Multiplo;
-import br.com.vilt.test.client.UserClient;
 
 public class NonMultipl implements Multiplo{
 
 	@Override
-	public void isMultiplo(short n, UserClient uc) {
-		if(n % 5 != 0 && n % 3 != 0) {
-			uc.addList(+n+"");
+	public void isMultiplo(Parametros params) {
+		if(params.getNumero() % 5 != 0 && params.getNumero() % 3 != 0) {
+			params.getUc().addList(+params.getNumero()+"");
 		}
 		
 	}

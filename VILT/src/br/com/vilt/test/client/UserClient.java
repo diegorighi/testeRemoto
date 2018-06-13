@@ -5,11 +5,11 @@ import java.util.Collection;
 
 import javax.swing.JOptionPane;
 
-import br.com.vilt.test.modelo.ListaReversa;
 import br.com.vilt.test.modelo.M3;
 import br.com.vilt.test.modelo.M35;
 import br.com.vilt.test.modelo.M5;
 import br.com.vilt.test.modelo.NonMultipl;
+import br.com.vilt.test.modelo.Parametros;
 
 public class UserClient {
 
@@ -18,31 +18,32 @@ public class UserClient {
 	private Collection<String> listaFatorada = new ArrayList<>();
 
 	public static void main(String[] args) {
-		UserClient uc = new UserClient();
-		int op = dialogoUI();
-		uc.metodologia(uc, op);
+		Parametros params = new Parametros();
+		params.setUc(new UserClient());
+		params.setOperador(dialogoUI());
+		params.getUc().metodologia(params);
 	}
 
 	private static int dialogoUI() {
 		Object[] options = { "Exibir Lista Reversa", "Exibir Lista Normal" };
-		int op = JOptionPane.showOptionDialog(null, "Deseja exibir a lista reversa?", "ATENÇÃO",
+		int op = JOptionPane.showOptionDialog(null, "Qual lista deseja exibir?", "ATENÇÃO",
 				JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
 		return op;
 	}
 
-	private void metodologia(UserClient uc, int op) {
-		ListaReversa sentidoDaLista = new ListaReversa();
+	private void metodologia(Parametros params) {
 		for (short i = INICIO; i <= FIM; i++) {
-			uc.getMultiplo(i, uc);
+			params.setNumero(i);
+			params.getUc().getMultiplo(params);
 		}
-		sentidoDaLista.isReverse(op, uc);
+		params.getSentidoDaLista().isReverse(params);
 	}
 
-	public void getMultiplo(short n, UserClient uc) {
-		new M3().isMultiplo(n, uc);
-		new M5().isMultiplo(n, uc);
-		new M35().isMultiplo(n, uc);
-		new NonMultipl().isMultiplo(n, uc);
+	public void getMultiplo(Parametros params) {
+		new M3().isMultiplo(params);
+		new M5().isMultiplo(params);
+		new M35().isMultiplo(params);
+		new NonMultipl().isMultiplo(params);
 	}
 
 	public void addList(String n) {

@@ -4,26 +4,25 @@ import java.util.Collections;
 import java.util.List;
 
 import br.com.vilt.test.api.SentidoDaLista;
-import br.com.vilt.test.client.UserClient;
 
 public class ListaReversa implements SentidoDaLista {
 
 	@Override
-	public void isReverse(int sentido, UserClient uc) {
+	public void isReverse(Parametros params) {
 
-		if (sentido == 1) {
+		if (params.getOperador() == 1) {
 			// ASC
-			uc.getListaFatorada().stream().forEach(l -> {
+			params.getUc().getListaFatorada().stream().forEach(l -> {
 				System.out.println(l);
 			});
-		} else if (sentido == 0) {
+		} else if (params.getOperador() == 0) {
 			// DESC
-			Collections.reverse((List<String>) uc.getListaFatorada());
-			uc.getListaFatorada().stream().forEach(l -> {
+			Collections.reverse((List<String>) params.getUc().getListaFatorada());
+			params.getUc().getListaFatorada().stream().forEach(l -> {
 				System.out.println(l);
 			});
 		} else
-			throw new IllegalArgumentException("Andou fuçando no código, né? :)");
+			throw new IllegalArgumentException("Andou fuçando o código, né? :)");
 
 	}
 
